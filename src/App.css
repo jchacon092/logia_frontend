@@ -1,0 +1,95 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* Ancho y alto base del sidebar */
+.sidebar {
+  width: 260px;
+  min-height: 100dvh;
+}
+
+/* Desktop (≥ md): sidebar fijo siempre visible */
+@media (min-width: 768px) {
+  .sidebar {
+    position: relative;
+    transform: none !important;
+  }
+}
+
+/* Móvil (< md): sidebar como panel deslizable */
+@media (max-width: 767.98px) {
+  .sidebar {
+    display: block !important;            /* se controla por transform */
+    position: fixed;
+    top: 0; bottom: 0; left: 0;
+    transform: translateX(-100%);
+    transition: transform .2s ease-in-out;
+    z-index: 1040;
+    background: #f8f9fa; /* igual que bg-light */
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  /* Overlay sutil al abrir (opcional) */
+  .sidebar.open::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.25);
+    z-index: -1;
+  }
+}
+
+/* Icono hamburguesa si no cargas el CSS de .navbar-toggler-icon */
+.btn .navbar-toggler-icon {
+  display: inline-block;
+  width: 1.1em; height: 1.1em;
+  background-image:
+    linear-gradient(currentColor, currentColor),
+    linear-gradient(currentColor, currentColor),
+    linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: center 25%, center, center 75%;
+  background-size: 100% 2px, 100% 2px, 100% 2px;
+  filter: invert(1);
+}

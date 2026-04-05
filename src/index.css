@@ -1,0 +1,65 @@
+:root{
+  --brand-dark:#0f1115;
+  --brand-accent:#ffc107; /* amarillo suave */
+}
+body{ background:#f7f7f9; color:#111; }
+a{text-decoration:none}
+
+/* Sidebar */
+.sidebar{ width:280px; min-height:100vh; background:var(--brand-dark); color:#e9ecef; }
+.sidebar .brand{display:flex; align-items:center; gap:10px; padding:16px; border-bottom:1px solid rgba(255,255,255,.08)}
+.sidebar .brand img{width:40px; height:40px; object-fit:contain}
+.sidebar .brand .title{font-weight:700; letter-spacing:.3px}
+.sidebar .nav-link{color:#adb5bd}
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover{ color:#fff; background:rgba(255,255,255,.06) }
+
+/* Main */
+.app-main{ padding:20px }
+
+/* Login background */
+.login-bg{
+  min-height:100vh;
+  background: url(/img/login-bg.jpg) center/cover no-repeat fixed;
+  position:relative;
+}
+.login-bg::after{
+  content:"";
+  position:absolute; inset:0;
+  background:rgba(0,0,0,.45); /* oscurece la foto */
+}
+.login-card{
+  position:relative; z-index:2;
+  max-width:420px;
+  background:#ffffffd9;
+  backdrop-filter: blur(2px);
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+
+.sidebar{
+  width: 280px;
+  min-height: 100vh;
+  background: var(--brand-dark);
+  color:#e9ecef;
+}
+.sidebar .nav-link{ color:#adb5bd }
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover{ color:#fff; background:rgba(255,255,255,.06) }
+
+/* En móvil, el offcanvas toma el ancho de pantalla por defecto; lo hacemos más angosto */
+@media (max-width: 767.98px){
+  .offcanvas.sidebar{
+    width: 85vw;           /* más cómodo en móvil */
+    max-width: 320px;
+  }
+}
+
+/* Main padding */
+.app-main{ padding: 16px }
+
+/* Tablas: permitir scroll horizontal en pantallas pequeñas */
+.table-wrap, .table-responsive{
+  overflow-x: auto;
+}
