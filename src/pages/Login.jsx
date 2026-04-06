@@ -4,8 +4,8 @@ import { Navigate } from 'react-router-dom';
 
 export default function Login(){
   const { user, login } = useAuth();
-  const [email, setEmail] = useState('super@logia.test');
-  const [password, setPassword] = useState('secret');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
